@@ -12,10 +12,10 @@ def index():
 
     # Getting news artiles
     news_articles = get_everything('articles')
-    sports_news = get_everything('sports')
-    business_news = get_everything('business')
+    top_headlines_news = get_everything('top headlines')
+    latest_news = get_everything('latest')
     title = 'Home - Welcome to the best news website online'
-    return render_template('index.html', title=title articles=news_articles, sports=sports_news, business=business_news)
+    return render_template('index.html', title=title articles=news_articles, top_headlines=top_headlines_news, latest=latest_news)
 
 @app.route('/news/<news_id>')
 def news(news_id):

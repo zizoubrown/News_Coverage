@@ -10,7 +10,7 @@
     {% endif %}
 </head>
 <body>
-    <!-- latest news section-->
+    <!-- news article-->
     <h3> Latest News</h3>
     <ul>
         {% for news_articles in articles %}
@@ -18,5 +18,20 @@
         {% endfor %}
     </ul>
     
+    <!-- top headlines news -->
+    <h3> Sports news</h3>
+    <ul>
+        {% for top_headlines_news in top_headlines %}
+        <li><{{ top_headlines_news.title}}/li>
+        {% endfor %}
+    </ul>
+
+    <!--latest news -->
+    <h3>Business news</h3>
+    <ul>
+        {% for latest_news in latest %}
+        <li>{{latest_news.title}}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
