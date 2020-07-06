@@ -12,6 +12,9 @@
     {% endif %}
 </head>
 <body>
+    <!--Content block-->
+    {% block content%}
+
     <!-- news article-->
     <h3> News Articles</h3>
     <ul>
@@ -29,5 +32,7 @@
     <ul>
         {{ macro.displayNewsList(latest)}}
     </ul>
+
+    {% endblock %}
 </body>
 </html>
