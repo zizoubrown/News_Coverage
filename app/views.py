@@ -12,7 +12,8 @@ def index():
 
     # Getting news artiles
     news_articles = get_everything('articles')
-    print(news_articles)
+    sports_news = get_everything('sports')
+    business_news = get_everything('business')
     title = 'Home - Welcome to the best news website online'
     return render_template('index.html', title=title articles=news_articles)
 
