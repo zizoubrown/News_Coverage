@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title> {{title}} </title>
+    {% else %}
+    <title> Welcome to the nest News coverage website </title>
+    {% endif %}
+</head>
+<body>
+    <!-- latest news section-->
+    <h3> Latest News</h3>
+    <ul>
+        {% for latest_news in latest %}
+        <li> {{ latest_news.title}} </li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
