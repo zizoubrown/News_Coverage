@@ -23,7 +23,7 @@ def create_app(config_name):
     from .requests import configure_request
     configure_request(app)
 
-    retun app
+    return app
 
 from app import views
 from app import error
