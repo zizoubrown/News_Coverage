@@ -1,8 +1,5 @@
-from app import app
 import urllib.request,json
-from  .models import news
-
-News = news.News
+from  .models import News
 
 #Getting api key
 api_key = None
@@ -12,7 +9,7 @@ base_url = None
 
 def configure_request(app):
     global api_key,base_url
-    api_key = app.cofig['NEWS_API_KEY']
+    api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
 
 def get_everything(category):
@@ -47,7 +44,7 @@ def process_results(news_list):
         image_url = news_item.get('image')
         published_at = news_item.get('published at')
 
-        if image_url:
+        if id:
             news_object = News(id,authur,title,description,image_url,published_at)
             news_results.append(news_object)
 

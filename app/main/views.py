@@ -1,9 +1,9 @@
 from flask import render_template,request,redirect,url_for
 from .import main
-from .request import get_news,get_everything,search_news
+from ..request import get_news,get_everything,search_news
 
 #Views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -11,8 +11,8 @@ def index():
     '''
 
     # Getting news artiles
-    news_articles = get_everything('articles')
-    top_headlines_news = get_everything('top headlines')
+    news_articles = get_everything('article')
+    top_headlines_news = get_everything('headlines')
     latest_news = get_everything('latest')
 
     title = 'Home - Welcome to the best news website online'
@@ -22,9 +22,9 @@ def index():
     if search_news:
         return redirect(url_for('search',news_name=search_news))
     else:
-        return render_template('index.html', title=title articles=news_articles, top_headlines=top_headlines_news, latest=latest_news)
+        return render_template('index.html', title=title, article=news_articles, headlines=top_headlines_news, latest=latest_news)
 
-@app.route('/news/<news_id>')
+@main.route('/news/<news_id>')
 def news(news_id):
 
     '''
@@ -34,7 +34,7 @@ def news(news_id):
     title = f'{news.title}'
     return render_template('news.html',title=title, news=news)
 
-@app.route('/search/<news_name>')
+@main.route('/search/<news_name>')
 def search(news_name):
     '''
     View function to display the search results
