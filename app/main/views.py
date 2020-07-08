@@ -11,18 +11,18 @@ def index():
     '''
 
     # Getting news artiles
-    news_articles = get_everything('article')
-    top_headlines_news = get_everything('headlines')
-    latest_news = get_everything('latest')
+    news_articles = get_everything('bbc-news')
+    #top_headlines_news = get_everything('headlines')
+    #latest_news = get_everything('latest')
 
     title = 'Home - Welcome to the best news website online'
 
     search_news = request.args.get('news_query')
 
     if search_news:
-        return redirect(url_for('search',news_name=search_news))
+        return redirect(url_for('main.search',news_name=search_news))
     else:
-        return render_template('index.html', title=title, article=news_articles, headlines=top_headlines_news, latest=latest_news)
+        return render_template('index.html', title=title, article=news_articles) #headlines=top_headlines_news, latest=latest_news)
 
 @main.route('/news/<news_id>')
 def news(news_id):

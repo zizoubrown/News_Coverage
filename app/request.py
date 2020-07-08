@@ -17,6 +17,7 @@ def get_everything(category):
     Function that gets the json response to our url request
     '''
     get_everything_url = base_url.format(category,api_key)
+    print(get_everything_url)
 
     with urllib.request.urlopen(get_everything_url) as url:
         get_everything_data = url.read()
@@ -24,8 +25,8 @@ def get_everything(category):
 
         news_results = None
 
-        if get_everything_response['results']:
-            news_results_list = get_everything_response['results']
+        if get_more_news_response['articles']:
+            news_results_list = get_more_news_response['articles']
             news_results = process_results(news_results_list)
 
     return news_results
