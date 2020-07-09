@@ -1,5 +1,5 @@
 import unittest
-from models import news
+from models import News
 from main import news
 News = news.News
 
