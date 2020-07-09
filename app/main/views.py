@@ -12,7 +12,7 @@ def index():
     # getting general news sources
     general_news = get_news()
     title ='News Highlights - Homepage'
-    return render_template('index.html', title = title, new = general_news)
+    return render_template('index.html', title = title,  new=general_news)
 
 
 @main.route('/news/<id>')
