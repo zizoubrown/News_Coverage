@@ -1,19 +1,3 @@
-'''
-class News:
-    #add docstring quotes here
-    News class to define News objects
-    #add docstring quotes here
-
-    def __init__(self,id,author,title,description,image_url,published_at):
-        self.id = id
-        self.author = author
-        self.title = title
-        self.description = description
-        self.image_url = image_url
-        self.published_at = published_at
-'''
-
-##############Testing##############
 class Articles:
     '''
     articles class to define article objects
