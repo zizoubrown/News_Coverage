@@ -1,22 +1,25 @@
 {% extends 'base.html'%}
-<!-- Content block -->
-{% block content %}
-<div class="container">
-
-    <!-- Image background -->
-    <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{news.image_url}}) no-repeat center center">
-        </div>
-
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 movie-details">
-            <h3>{{ news.title }}</h3>
-
-            <p class="description"> {{ news.description }}</p>
-            <p class="published_at"> {{ news.published_at }} </p>
+{% import 'macros.html' as macro%}
 
 
-        </div>
-    </div>
 
-</div>
+<!-----------------TESTING---------------->
+{% block styles%}
+
+{{ super() }}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
+
+{% block content %}
+
+<h3 class='jumbotron text-center'>News Highlights </h3>
+<div class='container'>
+    <div class='card'>
+    <div class="card-body" style="background-color:lightcyan;">
+     {{ macro.mylist(data)}}
+    </div>
+    </div>
+</div>
+
+{% endblock%}

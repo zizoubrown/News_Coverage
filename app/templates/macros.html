@@ -1,14 +1,47 @@
-{% macro displayNewsList(news_list) %}
+{% macro displaynewsList(news_list) %}
+{% for news in news_list %}
+<div class="col-md-4 col-lg-3 col-sm-10 p-1 mx-auto">
+     <div class="card">
+        <h4 class="text-center"><a href="/news/{{news.id}}"> {{ news.name }}</a></h4>
+      </div>
 
-    {% for movie in movie_list %}
-        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
-            <img src="{{ news.image_url }}" alt="{{ news.title }} image" class="img-responsive">
-            <li class="text-center">
-                <a href="/news/{{news.id}}">
-                    {{ movie.title|truncate(10)}}</a>
-            </li>
-        </div>
 
-    {% endfor %}
+      <p class="text-center" style="font-size:16px;">{{ news.description| truncate (200)}}</p>
 
+      <div class="card-footer">
+        <p class="text-center"> Country: {{ news.country}}</p>
+      </div>
+
+
+
+</div>
+
+{% endfor %}
+
+
+{% endmacro %}
+{% macro mylist(articles_list) %}
+{% for news in articles_list %}
+<div class="col-md-4 col-lg-3 col-sm-10 p-1 mx-auto">
+
+      <div class='card'>
+
+          <img class="image-thumbnail" src=" {{news.urlToImage}}" height="200" width="200">
+
+          <p class="text-center "> <b>{{ news.author }}</b> </p>
+
+          <hr>
+
+          <p class="text-center ">{{ news.content | truncate (100)}}</p>
+
+          <a href="{{news.url}} "><button class="text-center btn btn-outline-success"> Read More</button></a>
+
+          <p class="text-center ">{{ news.publishedAt.date }}</p>
+
+
+      </div>
+
+</div>
+
+{% endfor %}
 {% endmacro %}

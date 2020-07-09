@@ -4,7 +4,9 @@ class Config:
     '''
     General configuration parent class
     '''
-    NEWS_API_BASE_URL = 'https://newsapi.org/v2/everything?language=en&sources={}&apiKey={}'
+    #NEWS_API_BASE_URL = 'https://newsapi.org/v2/everything?language=en&sources={}&apiKey=4812f8d3eefd458280a939b681e1065b'
+    NEWS_API_BASE_URL ='https://newsapi.org/v2/sources?apiKey={}'
+    ARTICLE_API_BASE_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'
     NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
